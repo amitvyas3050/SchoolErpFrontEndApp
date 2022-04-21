@@ -1,0 +1,25 @@
+<div class="row"> 
+  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 col-xx-12" *ngFor="let list of modules">
+    <nb-card size="small" >
+      <nb-card-header [ngStyle]="{'background-image': getBackgroundImage(list.bgColor1, list.bgColor2)}">
+        {{list.menuText}}
+        <i class="icon {{list.menuIcon}}" (click)="openLink(list.navUrl)" style="font-size: 30px;"></i>
+      </nb-card-header>
+      <nb-card-body [style.background-color]="list.bgColor1">
+        <div class="row"  >
+          <div class="col-lg-4 col-md-3 col-xs-3" *ngFor="let item of list.items" >
+            <div class="box text-center" (click)="openLink(item.navUrl)" >
+              <i class="icon icon-item {{item.menuIcon}}" ></i>
+              <div class="label" (click)="openLink(item.navUrl)" >{{item.menuText}}</div>
+            </div>
+          </div>
+        </div>
+        
+      </nb-card-body>
+      <nb-card-footer>
+       </nb-card-footer>
+    </nb-card>
+   
+  </div>
+
+</div> 

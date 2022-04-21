@@ -1,0 +1,72 @@
+ @import '../../@theme/styles/themes';
+ @import '~@nebular/theme/styles/core/mixins';
+ @include nb-install-component() {
+
+  nb-card-header{
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    color: white;
+    padding: 10px;
+  }
+
+  // nb-card-body{
+  //   // display: flex;
+  //   // padding: 8px;
+  //   height: 150px;
+  // }
+
+ *{
+   padding: 0; margin: 0;
+ }
+  .icon-item{
+    font-size: 30px !important;
+    color: white;
+    text-align: center;
+    padding-bottom: 5px;
+  }
+  .icon-item:hover{
+    font-size: 45px !important;
+    
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: 100px;
+    grid-gap: 5px;
+    background-color: #fff;
+    color: #444;
+  }
+
+  .box {
+    border-radius: 5px;
+    // padding: 3px;
+
+    padding: 12px;
+    
+  }
+  .box:hover{
+    border: 1px solid white;
+  }
+
+  .label{
+    padding: 5px;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 600;
+    text-align: center;
+    color: #fff;
+  }
+ 
+nb-card {
+  transition: all 0.2s ease;
+  cursor: pointer
+}
+
+
+
+
+
+  
+  
+}

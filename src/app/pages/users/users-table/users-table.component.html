@@ -1,0 +1,23 @@
+
+
+<nb-card>
+  <nb-card-header  class="d-flex justify-content-between align-items-center">
+    <!-- <h6>Users List</h6> -->
+    <span class="header-text" >Users List</span>
+    <button nbButton status="primary" (click)="createUser()" ><nb-icon icon="plus-outline"></nb-icon>Add User</button>
+  </nb-card-header>
+
+  <nb-card-body>
+    <ng2-smart-table
+      class="user-smart-table"
+      [settings]="settings"
+      [source]="source"
+      (edit)="onEdit($event)"
+      (delete)="onDelete($event)">
+    </ng2-smart-table>
+  </nb-card-body>
+  <nb-card-footer>
+    <!-- <button type="submit" (click)="createUser()" class="btn btn-primary">Add User</button> -->
+  </nb-card-footer>
+
+</nb-card>

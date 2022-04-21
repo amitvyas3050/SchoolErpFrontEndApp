@@ -1,0 +1,67 @@
+ @import '../../@theme/styles/themes';
+ @import '~@nebular/theme/styles/core/mixins';
+ @include nb-install-component() {
+ *{
+   padding: 0; margin: 0;
+ }
+  .icon{
+    font-size: 45px !important;
+    // display: flex;
+    text-align: center;
+    padding-bottom: 5px;
+  }
+
+  .icon:hover{
+    font-size: 50px !important;
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 120px);
+    grid-gap: 10px;
+    // background-color: #fff;
+    color: #444;
+   
+  }
+  
+  .box {
+    place-items: center;
+    color: #fff;
+    border-radius: 15px;
+    text-align: center;
+    height: 100px;
+    padding-top: 10px;
+    border: 1px solid #6c757d;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+
+  .box:hover {
+    box-shadow: 2px 3px 3px 1px #d6e3f5;
+    transform: scale(1.1);
+    border: solid 1px #03178acc;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  .label{
+    padding: 5px;
+    font-size: 12px;
+    line-height: 1;
+    color: white;
+    font-weight: 400;
+    text-align: center;
+    
+  }
+ 
+nb-card {
+  transition: all 0.2s ease;
+  cursor: pointer
+}
+
+
+
+
+
+  
+  
+}

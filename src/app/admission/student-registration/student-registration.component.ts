@@ -1,0 +1,76 @@
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {takeUntil, takeWhile} from 'rxjs/operators';
+import {ActivatedRoute, Router} from '@angular/router';
+import {NbSidebarService, NbToastrService} from '@nebular/theme';
+import {FormBuilder, Validators, FormGroup} from '@angular/forms';
+import {Subject} from 'rxjs';
+import { AppModuleData } from '../../@core/interfaces/ecommerce/app-module';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
+import { MatPaginator } from '@angular/material/paginator';
+//import { MatTableDataSource,MatSort,MatPaginator } from '@angular/material';
+
+enum OrderMode {
+  EDIT = 'Edit',
+  ADD = 'Add',
+}
+
+@Component({
+  selector: 'ngx-student-registration',
+  templateUrl: './student-registration.component.html',
+  styleUrls: ['./student-registration.component.scss'],
+})
+
+export class StudentRegistrationComponent implements OnInit, OnDestroy {
+  private alive = true;
+  modules:any[];
+  protected readonly unsubscribe$ = new Subject<void>();
+  listData: MatTableDataSource<any>;
+  displayedColumns: string[] = ['fullName', 'email', 'mobile', 'city', 'departmentName','actions'];
+  //@ViewChild(MatSort) sort: MatSort;
+  //@ViewChild(MatPaginator) paginator: MatPaginator;
+  searchKey: string;
+
+  constructor(
+              private router: Router,
+              private route: ActivatedRoute,
+              private toastrService: NbToastrService,
+             ) {
+              this.initModules();
+          
+  }
+  initModules() {
+   
+  }
+  ngOnInit(): void {
+    // console.log('Home =>side barcollapsed');
+  }
+
+  openLink(url: string){
+    this.router.navigate([url]);
+  }
+
+  getBackgroundImage(mainColor:string, secColor :string) {
+    return `linear-gradient( ${mainColor},${secColor})`;
+}
+  back() {
+    this.router.navigate(['/pages/orders/list']);
+  }
+
+  ngOnDestroy() {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+  }
+
+
+  onSearchClear() {
+    this.searchKey = "";
+    this.applyFilter();
+  }
+
+  applyFilter() {
+    //this.listData.filter = this.searchKey.trim().toLowerCase();
+  }
+
+
+}

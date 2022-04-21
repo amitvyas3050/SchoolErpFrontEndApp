@@ -1,0 +1,58 @@
+@import '../../@theme/styles/themes';
+@import '~@nebular/theme/styles/core/mixins';
+
+
+@include nb-install-component() {
+
+nb-card-header{
+  display: flex;
+ justify-content: space-between;
+}
+
+.row{
+  margin-top: 2px;
+  margin-bottom:10px
+}
+.box {
+  place-items: center;
+  color: #fff;
+  border-radius: 15px;
+  text-align: center;
+  height: 50px;
+  // padding-top: 5px;
+  border: 1px solid #6c757d;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.box:hover {
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px 2px #d6e3f5;
+  transform: scale(1);
+  border: solid 1px #03178acc;
+  z-index: 1;
+  cursor: pointer;
+}
+  
+  * {
+      box-sizing: border-box;
+  }
+  .icon{
+    color: white;
+    font-size: 25px !important;
+    text-align: center;
+   }
+   
+  .action{
+    color: white;
+    font-size: 12px !important;
+    text-align: center;
+  }
+  
+  .label{
+    font-family: Open Sans, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    color: white;
+}
+}

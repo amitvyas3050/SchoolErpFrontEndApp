@@ -1,0 +1,23 @@
+<nb-card status="danger">
+  <nb-card-header>Assign Modules</nb-card-header>
+  <nb-card-body>
+  <mat-dialog-content style="padding: 3px; margin: 2px;" >
+    <mat-checkbox *ngFor="let item of modules" [(ngModel)]="checked" >
+      {{item.name}}
+    </mat-checkbox>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Update</button>
+  </mat-dialog-actions>
+
+  </nb-card-body>
+</nb-card>
+
+
+
+<!-- <mat-selection-list >
+  <mat-list-option *ngFor="let item of modules">
+    {{item.name}}
+  </mat-list-option>
+</mat-selection-list> -->
